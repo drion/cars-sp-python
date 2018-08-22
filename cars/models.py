@@ -22,6 +22,7 @@ class Car(models.Model):
         null=True
     )
     price = models.DecimalField(max_digits=35, decimal_places=10)
+    year = models.PositiveIntegerField()
 
     def __str__(self):
         return f"{self.make} {self.model}"

@@ -48,7 +48,8 @@
             "make": "Volvo",
             "model": "CX90",
             "category": 4,
-            "price": "120000.0000000000"
+            "price": "120000.0000000000",
+            "year": 2015
         }
     },
     {
@@ -59,7 +60,8 @@
             "make": "Acura",
             "model": "MDX",
             "category": 3,
-            "price": "30000.0000000000"
+            "price": "30000.0000000000",
+            "year": 2007
         }
     },
     {
@@ -70,7 +72,8 @@
             "make": "Audi",
             "model": "Sedan",
             "category": 2,
-            "price": "5000.0000000000"
+            "price": "5000.0000000000",
+            "year": 1995
         }
     },
     {
@@ -81,7 +84,8 @@
             "make": "Ford",
             "model": "Bronco",
             "category": 1,
-            "price": "5000.0000000000"
+            "price": "5000.0000000000",
+            "year": 1985
         }
     }
 ]
