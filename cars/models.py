@@ -23,6 +23,7 @@ class Car(models.Model):
     )
     price = models.DecimalField(max_digits=35, decimal_places=10)
     year = models.PositiveIntegerField()
+    owner = models.CharField(max_length=100)
 
     def __str__(self):
         return f"{self.make} {self.model}"

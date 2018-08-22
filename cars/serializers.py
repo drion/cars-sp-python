@@ -14,4 +14,4 @@ class CategorySerializer(serializers.ModelSerializer):
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
-        fields = ('uuid', 'make', 'model', 'category', 'price', 'year')
+        fields = ('uuid', 'make', 'model', 'category', 'price', 'year', 'owner')

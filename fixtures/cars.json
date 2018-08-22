@@ -49,7 +49,8 @@
             "model": "CX90",
             "category": 4,
             "price": "120000.0000000000",
-            "year": 2015
+            "year": 2015,
+            "owner": "Mark Silver"
         }
     },
     {
@@ -61,7 +62,8 @@
             "model": "MDX",
             "category": 3,
             "price": "30000.0000000000",
-            "year": 2007
+            "year": 2007,
+            "owner": "Julia Peterson"
         }
     },
     {
@@ -73,7 +75,8 @@
             "model": "Sedan",
             "category": 2,
             "price": "5000.0000000000",
-            "year": 1995
+            "year": 1995,
+            "owner": "Bob Stevens"
         }
     },
     {
@@ -85,7 +88,8 @@
             "model": "Bronco",
             "category": 1,
             "price": "5000.0000000000",
-            "year": 1985
+            "year": 1985,
+            "owner": "John White"
         }
     }
 ]
