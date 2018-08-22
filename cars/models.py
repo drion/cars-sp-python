@@ -15,7 +15,7 @@ class Car(models.Model):
         editable=False)
     make = models.CharField(max_length=50)
     model = models.CharField(max_length=50)
-    category = models.OneToOneField(
+    category = models.ForeignKey(
         'Category',
         on_delete=models.SET_NULL,
         blank=True,
