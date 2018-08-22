@@ -8,27 +8,6 @@ MIN_YEAR = 0
 MAX_YEAR = 3000
 
 
-class Car(models.Model):
-    uuid = models.UUIDField(
-        db_index=True,
-        default=uuid_lib.uuid4,
-        editable=False)
-    make = models.CharField(max_length=50)
-    model = models.CharField(max_length=50)
-    category = models.ForeignKey(
-        'Category',
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True
-    )
-    price = models.DecimalField(max_digits=35, decimal_places=10)
-    year = models.PositiveIntegerField()
-    owner = models.CharField(max_length=100)
-
-    def __str__(self):
-        return f"{self.make} {self.model}"
-
-
 class Category(models.Model):
     uuid = models.UUIDField(
         db_index=True,
@@ -48,3 +27,29 @@ class Category(models.Model):
             return Category.objects.get(start_year__lte=year, end_year__gt=year)
         except models.ObjectDoesNotExist:
             return None
+
+
+
+class Car(models.Model):
+    uuid = models.UUIDField(
+        db_index=True,
+        default=uuid_lib.uuid4,
+        editable=False)
+    make = models.CharField(max_length=50)
+    model = models.CharField(max_length=50)
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True
+    )
+    price = models.DecimalField(max_digits=35, decimal_places=10)
+    year = models.PositiveIntegerField()
+    owner = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.make} {self.model}"
+
+    def save(self, *args, **kwargs):
+        self.category = Category.choose_category(self.year)
+        super().save(*args, **kwargs)
