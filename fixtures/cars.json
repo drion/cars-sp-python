@@ -41,12 +41,92 @@
     },
 
     {
+        "model": "cars.carmake",
+        "pk": 1,
+        "fields": {
+            "uuid": "c8e1a338-0b8a-408d-94f1-ed1d66b9aa65",
+            "name": "Volvo"
+        }
+    },
+    {
+        "model": "cars.carmake",
+        "pk": 2,
+        "fields": {
+            "uuid": "b6772e59-692d-481d-b306-eda099c5c666",
+            "name": "Audi"
+        }
+    },
+    {
+        "model": "cars.carmake",
+        "pk": 3,
+        "fields": {
+            "uuid": "14dd7d67-2d71-47ec-abc8-21cd2613fe1c",
+            "name": "BMW"
+        }
+    },
+
+    {
+        "model": "cars.carmodel",
+        "pk": 1,
+        "fields": {
+            "uuid": "af01745f-2d3c-420a-b939-a8465f4e9922",
+            "name": "XC90",
+            "make": 1
+        }
+    },
+    {
+        "model": "cars.carmodel",
+        "pk": 2,
+        "fields": {
+            "uuid": "14dd7d67-2d71-47ec-abc8-21cd0616fe19",
+            "name": "XC60",
+            "make": 1
+        }
+    },
+    {
+        "model": "cars.carmodel",
+        "pk": 3,
+        "fields": {
+            "uuid": "e04feb9e-9c0b-4712-ac27-f94bf0aad875",
+            "name": "MDX",
+            "make": 2
+        }
+    },
+  {
+        "model": "cars.carmodel",
+        "pk": 4,
+        "fields": {
+            "uuid": "cb439def-4c63-41e5-8990-4260fa988c0f",
+            "name": "TT",
+            "make": 2
+        }
+    },
+    {
+        "model": "cars.carmodel",
+        "pk": 5,
+        "fields": {
+            "uuid": "775d7670-1d9c-479f-9902-bb9016e7d246",
+            "name": "Bronco",
+            "make": 3
+        }
+    },
+    {
+        "model": "cars.carmodel",
+        "pk": 6,
+        "fields": {
+          "uuid": "4ea60f85-1887-4359-a2ea-b7c4e21239fc",
+          "name": "X1",
+            "make": 3
+        }
+    },
+
+    {
         "model": "cars.car",
         "pk": 1,
         "fields": {
             "uuid": "ca99afac-f034-4ee9-9216-eb973739bb8a",
-            "make": "Volvo",
-            "model": "CX90",
+            "make": 1,
+            "model": 1,
             "category": 4,
             "price": "120000.0000000000",
             "year": 2015,
@@ -58,8 +138,8 @@
         "pk": 2,
         "fields": {
             "uuid": "5b4031b2-59cd-4ff4-bca4-ab7101149593",
-            "make": "Acura",
-            "model": "MDX",
+            "make": 2,
+            "model": 3,
             "category": 3,
             "price": "30000.0000000000",
             "year": 2007,
@@ -71,8 +151,8 @@
         "pk": 3,
         "fields": {
             "uuid": "742ea9c6-9bb8-4bcc-a608-8f7500a67ac1",
-            "make": "Audi",
-            "model": "Sedan",
+            "make": 3,
+            "model": 5,
             "category": 2,
             "price": "5000.0000000000",
             "year": 1995,
@@ -84,8 +164,8 @@
         "pk": 4,
         "fields": {
             "uuid": "8d99eb30-1bce-4f12-b218-966496b05945",
-            "make": "Ford",
-            "model": "Bronco",
+            "make": 1,
+            "model": 2,
             "category": 1,
             "price": "5000.0000000000",
             "year": 1985,

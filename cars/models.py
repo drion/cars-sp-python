@@ -29,14 +29,13 @@ class Category(models.Model):
             return None
 
 
-
 class Car(models.Model):
     uuid = models.UUIDField(
         db_index=True,
         default=uuid_lib.uuid4,
         editable=False)
-    make = models.CharField(max_length=50)
-    model = models.CharField(max_length=50)
+    make = models.ForeignKey('CarMake', on_delete=models.CASCADE)
+    model = models.ForeignKey('CarModel', on_delete=models.CASCADE)
     category = models.ForeignKey(
         Category,
         on_delete=models.SET_NULL,
@@ -48,8 +47,31 @@ class Car(models.Model):
     owner = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.make} {self.model}"
+        return f"{self.make.name} {self.model.name}"
 
     def save(self, *args, **kwargs):
         self.category = Category.choose_category(self.year)
         super().save(*args, **kwargs)
+
+
+class CarMake(models.Model):
+    uuid = models.UUIDField(
+        db_index=True,
+        default=uuid_lib.uuid4,
+        editable=False)
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+
+class CarModel(models.Model):
+    uuid = models.UUIDField(
+        db_index=True,
+        default=uuid_lib.uuid4,
+        editable=False)
+    name = models.CharField(max_length=50)
+    make = models.ForeignKey('CarMake', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

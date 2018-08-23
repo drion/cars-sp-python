@@ -8,8 +8,11 @@ from .models import (
 
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('uuid', 'make', 'model', 'category', 'price', 'year', 'owner')
+    list_display = ('uuid', 'model', 'make', 'category', 'price', 'year', 'owner')
     readonly_fields = ('category', )
+
+    def make(self, car):
+        return car.model.make
 
 
 @admin.register(Category)
