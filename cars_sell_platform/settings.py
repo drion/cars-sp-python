@@ -133,3 +133,5 @@ STATIC_URL = '/static/'
 FIXTURE_DIRS = (
     os.path.join(PROJECT_DIR, 'fixtures'),
 )
+
+CSRF_COOKIE_NAME = "csrftoken"
